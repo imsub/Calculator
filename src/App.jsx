@@ -15,7 +15,14 @@ function App() {
     if(event.target.value !== "=" && event.target.value !== "C")
       setInputFiels(prev => prev+event.target.value);
     else if(event.target.value === "=")
-      setResult(eval(inpField));
+    {
+      if(inpField.length === 0 || inpField[inpField.length-1] === "/" || inpField[inpField.length-1] === "+" ||
+      inpField[inpField.length-1] === "*" || inpField[inpField.length-1] === "-"){
+        setResult("ERROR");
+      }
+      else
+        setResult(eval(inpField));
+    }
     else{
       setInputFiels("");
       setResult("");
