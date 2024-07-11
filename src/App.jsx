@@ -18,7 +18,7 @@ function App() {
     {
       if(inpField.length === 0 || inpField[inpField.length-1] === "/" || inpField[inpField.length-1] === "+" ||
       inpField[inpField.length-1] === "*" || inpField[inpField.length-1] === "-"){
-        setResult("ERROR");
+        setResult("Error");
       }
       else
         setResult(eval(inpField));
